@@ -1,0 +1,51 @@
+<!--pages/base/base.wxml-->
+<text>{{msg}}</text>
+<image class='banner' src="{{img}}"></image>
+<view wx:for="{{arr}}" wx:key="{{index}}">
+  {{index}} {{item}}
+</view>
+
+<view wx:for="{{list}}" wx:key="{{index}}">
+  {{item.name}} {{item.age}}
+</view>
+
+<view wx:if="{{isLogin}}">wang</view>
+<view wx:else>请您先登录</view>
+
+<view hidden='{{isLogin}}'>hidden</view>
+
+
+ <view class='boss' bindtap='onclickHander' data-id="1234">
+  <view class='child' catchtap='onchildHander'></view>
+ </view>
+
+ <button size='mini' bindtap='onTapHandler'>点击+1</button>
+ <view>{{count}}</view>
+
+
+ <!-- 
+     如果需要频繁切换的情况下，用hidden更好
+     如果在运行是条件不大可能改变则wx:if较好
+
+     设计师最好用iphone6设计标准来做UI图
+
+     第三方样式库：WeUI、iView Weapp、Vant Weapp
+
+     catch 和 bind的区别：
+     bind是可以事件冒泡的，catch在事件中会阻止事件冒泡
+
+     数据类型：
+       String:字符串       
+       Number：数字
+       Object:对象
+       Array:数组
+       Bool:布尔值
+       GeoPoint：地理位置点
+       Date：时间（客户端时间）
+       Null
+
+ -->
+
+
+
+
